@@ -1,9 +1,10 @@
-import { ListPosts } from "./components/List";
+import { Todo } from "./components/Todos";
 
 function App() {
   return (
     <>
-      <ListPosts />
+      {/* <ListPosts /> */}
+      <Todo />
     </>
   );
 }
