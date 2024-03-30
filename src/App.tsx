@@ -1,10 +1,11 @@
-import { Todo } from "./components/Todos";
+import { MovieContainer } from "./components/Movies/Container";
 
 function App() {
   return (
     <>
-      {/* <ListPosts /> */}
-      <Todo />
+      <MovieContainer>
+        <p>Movies</p>
+      </MovieContainer>
     </>
   );
 }
