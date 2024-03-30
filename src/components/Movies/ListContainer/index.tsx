@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
 
-type ListContainerProps = HTMLAttributes<HTMLUListElement>;
+type ListMovieProps = HTMLAttributes<HTMLUListElement>;
 
-export const ListContainer = ({ children, ...rest }: ListContainerProps) => {
+export const ListMovie = ({ children, ...rest }: ListMovieProps) => {
   return <ul {...rest}>{children}</ul>;
 };
