@@ -7,17 +7,26 @@ type ResponseAPI = {
   Search: MoviePersistence[];
 };
 
-export const useMoviesQuery = (search?: string) => {
+type UseMoviesQueryParams = {
+  search?: string;
+  pageParam?: number;
+};
+
+export const useMoviesQuery = ({
+  search = "terror",
+  pageParam,
+}: UseMoviesQueryParams) => {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["movies", search],
+    queryKey: ["movies", search, pageParam],
     queryFn: async () => {
       const response = await clientApi.get<ResponseAPI>(
-        `/?s=${search ?? "terror"}&limit=30&apikey=${import.meta.env.VITE_API_KEY}`,
+        `/?s=${search ?? "terror"}&page=${pageParam ?? 1}&limit=30&apikey=${import.meta.env.VITE_API_KEY}`,
       );
 
       return response.data.Search;
     },
     select: (data: MoviePersistence[]) => data.map(MovieMapper.toDomain),
+    refetchOnWindowFocus: false,
   });
 
   return { data, isLoading, isError };
