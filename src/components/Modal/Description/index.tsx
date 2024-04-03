@@ -6,5 +6,9 @@ export const ModalDescription = ({
   children,
   ...rest
 }: ModalDescriptionProps) => {
-  return <p {...rest}>{children}</p>;
+  return (
+    <p className="text-slate-500" {...rest}>
+      {children}
+    </p>
+  );
 };
