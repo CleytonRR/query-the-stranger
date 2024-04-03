@@ -5,5 +5,5 @@ type ModalImageProps = HTMLAttributes<HTMLImageElement> & {
 };
 
 export const ModalImage = ({ ...rest }: ModalImageProps) => {
-  return <img {...rest} />;
+  return <img className="rounded-xl shadow-sm" {...rest} />;
 };
