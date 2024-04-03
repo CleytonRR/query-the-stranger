@@ -19,7 +19,10 @@ export const ContainerModal = ({
     <>
       {createPortal(
         <div className="bg-[rgba(0,0,0,0.7)] w-svw h-svh absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
-          <div {...rest} className="rounded-md px-5 py-4 bg-white">
+          <div
+            {...rest}
+            className="rounded-md px-5 py-4 bg-white max-w-[650px]"
+          >
             {children}
           </div>
         </div>,
