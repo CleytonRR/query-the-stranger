@@ -139,7 +139,7 @@ function App() {
         </section>
       </MovieContainer>
 
-      <ContainerModal open={openModal} onClose={() => console.log("Fechando!")}>
+      <ContainerModal open={openModal} onClose={() => setOpenModal(false)}>
         <ModalBody>
           <ModalImage src="https://m.media-amazon.com/images/M/MV5BZjkzNGQzODMtMDM4MS00YTU2LWI2M2UtN2I2NTA2MDUzZmRmXkEyXkFqcGdeQXVyMTE5MzU1Njkw._V1_SX300.jpg" />
           <div className="flex flex-col">
