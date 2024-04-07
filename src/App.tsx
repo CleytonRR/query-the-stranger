@@ -1,4 +1,10 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
+import { useState } from "react";
+import { ModalBody } from "./components/Modal/Body";
+import { ContainerModal } from "./components/Modal/Container";
+import { ModalDescription } from "./components/Modal/Description";
+import { ModalImage } from "./components/Modal/Image";
+import { ModalTitle } from "./components/Modal/Title";
 import { MovieContainer } from "./components/Movies/Container";
 import { ListMovie } from "./components/Movies/ListContainer";
 import { ListItem } from "./components/Movies/ListItem";
@@ -87,7 +93,9 @@ const movies = [
 ];
 
 function App() {
-  // const { data: movies } = useMoviesQuery();
+  const [pageParam, setPageParam] = useState(1);
+  const [openModal, setOpenModal] = useState(false);
+  // const { data: movies } = useMoviesQuery({ pageParam });
 
   return (
     <div className="bg-gradient-to-br from-purple-500 to-pink-500 h-svh">
@@ -98,6 +106,10 @@ function App() {
               <ListItem
                 key={movie.imdbID}
                 className="flex items-center flex-col gap-2 p-4 bg-slate-50 shadow-lg rounded-md"
+                role="button"
+                onClick={() => setOpenModal(true)}
+                aria-label="Botão para abrir modal com mais detalhes sobre o filme selecionado"
+                tabIndex={0}
               >
                 <img
                   src={movie.poster}
@@ -111,14 +123,36 @@ function App() {
             ))}
         </ListMovie>
         <section className="flex items-center justify-center gap-4 mt-6">
-          <button className="flex items-center bg-white px-2 pr-6 py-1 rounded shadow-md hover:bg-pink-300 transition-all hover:scale-105">
+          <button
+            disabled={pageParam === 1}
+            onClick={() => setPageParam((prev) => prev - 1)}
+            className="flex items-center bg-white px-2 pr-6 py-1 rounded shadow-md hover:bg-pink-300 transition-all hover:scale-105"
+          >
             <ChevronLeftIcon className="w-8 h-8" /> <span>Anterior</span>
           </button>
-          <button className="flex items-center bg-white px-2 pl-6 py-1 rounded shadow-md hover:bg-pink-300 transition-all hover:scale-105">
+          <button
+            onClick={() => setPageParam((prev) => prev + 1)}
+            className="flex items-center bg-white px-2 pl-6 py-1 rounded shadow-md hover:bg-pink-300 transition-all hover:scale-105"
+          >
             Próximo <ChevronRightIcon className="w-8 h-8" />
           </button>
         </section>
       </MovieContainer>
+
+      <ContainerModal open={openModal} onClose={() => console.log("Fechando!")}>
+        <ModalBody>
+          <ModalImage src="https://m.media-amazon.com/images/M/MV5BZjkzNGQzODMtMDM4MS00YTU2LWI2M2UtN2I2NTA2MDUzZmRmXkEyXkFqcGdeQXVyMTE5MzU1Njkw._V1_SX300.jpg" />
+          <div className="flex flex-col">
+            <ModalTitle>Object of Obsession</ModalTitle>
+            <ModalDescription>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
+              cumque consequuntur quam eos animi. Molestias, est minus.
+              Doloremque atque eius voluptatem reiciendis commodi quae culpa
+              est, porro pariatur? Quod, praesentium.
+            </ModalDescription>
+          </div>
+        </ModalBody>
+      </ContainerModal>
     </div>
   );
 }
