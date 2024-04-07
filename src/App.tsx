@@ -105,7 +105,7 @@ function App() {
             movies.map((movie) => (
               <ListItem
                 key={movie.imdbID}
-                className="flex items-center flex-col gap-2 p-4 bg-slate-50 shadow-lg rounded-md"
+                className="flex items-center flex-col gap-2 p-4 bg-slate-50 shadow-lg rounded-md hover:scale-105 transition-all hover:bg-slate-200"
                 role="button"
                 onClick={() => setOpenModal(true)}
                 aria-label="Botão para abrir modal com mais detalhes sobre o filme selecionado"
