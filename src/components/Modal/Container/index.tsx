@@ -25,7 +25,7 @@ export const ContainerModal = ({
         >
           <div
             {...rest}
-            className="rounded-md px-5 py-4 bg-white max-w-[650px]"
+            className="rounded-md px-5 py-4 bg-white max-w-[650px] animate-fade"
           >
             {children}
           </div>
