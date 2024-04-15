@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { createPortal } from "react-dom";
+import { Portal } from "../../Portal";
 
 type ContainerModalProps = HTMLAttributes<HTMLDivElement> & {
   open: boolean;
@@ -17,21 +17,18 @@ export const ContainerModal = ({
   }
 
   return (
-    <>
-      {createPortal(
+    <Portal>
+      <div
+        className="bg-[rgba(0,0,0,0.7)] w-svw h-svh absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+        onClick={() => onClose()}
+      >
         <div
-          className="bg-[rgba(0,0,0,0.7)] w-svw h-svh absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
-          onClick={() => onClose()}
+          {...rest}
+          className="rounded-md px-5 py-4 bg-white max-w-[650px] animate-fade"
         >
-          <div
-            {...rest}
-            className="rounded-md px-5 py-4 bg-white max-w-[650px] animate-fade"
-          >
-            {children}
-          </div>
-        </div>,
-        document.body,
-      )}
-    </>
+          {children}
+        </div>
+      </div>
+    </Portal>
   );
 };
