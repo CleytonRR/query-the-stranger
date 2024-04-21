@@ -4,6 +4,8 @@ Explore e descubra filmes incríveis com a Query the Stranger!
 
 Este projeto, desenvolvido com React, Next.js, React Query, Axios, Typescript, Tailwind e Vite, oferece uma interface intuitiva e acessível para você navegar pelo mundo dos filmes.
 
+Esse projeto teve como objetivo a prática e aprendizados e aprofundamento em NextJS, React-Query e Tailwind.
+
 ## Funcionalidades: 🔥
 
 - Lista de Filmes: Encontre o filme perfeito para você com nossa lista completa e organizada.
