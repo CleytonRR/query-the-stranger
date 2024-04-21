@@ -1,10 +1,15 @@
-# Query the Stranger: Mergulhe no Universo dos Filmes!
+# Query the Stranger: Mergulhe no Universo dos Filmes! 🧟‍♂️🧟‍♀️
 
 Explore e descubra filmes incríveis com a Query the Stranger!
 
 Este projeto, desenvolvido com React, Next.js, React Query, Axios, Typescript, Tailwind e Vite, oferece uma interface intuitiva e acessível para você navegar pelo mundo dos filmes.
 
 Esse projeto teve como objetivo a prática e aprendizados e aprofundamento em NextJS, React-Query e Tailwind.
+
+<p align="center">
+  <img width="460" height="300" src="https://github.com/CleytonRR/query-the-stranger/assets/15960777/6da42ffa-58dd-4ec6-9b1e-535b0ccb1f78">
+</p>
+
 
 ## Funcionalidades: 🔥
 
