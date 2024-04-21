@@ -13,10 +13,10 @@ Este projeto, desenvolvido com React, Next.js, React Query, Axios, Typescript, T
 
 ## Tecnologias:
 
-    React
-    Next.js
-    React Query
-    Axios
-    Typescript
-    Tailwind
-    Vite
+- React
+- Next.js
+- React Query
+- Axios
+- Typescript
+- Tailwind
+- Vite
