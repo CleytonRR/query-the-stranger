@@ -6,10 +6,10 @@ Este projeto, desenvolvido com React, Next.js, React Query, Axios, Typescript, T
 
 ## Funcionalidades:
 
-    Lista de Filmes: Encontre o filme perfeito para você com nossa lista completa e organizada.
-    Detalhes do Filme: Clique em um filme para abrir um modal informativo com todos os detalhes, incluindo título, ano, diretor, elenco, sinopse e muito mais.
-    Padrão Mapper: Implementação eficiente do padrão Mapper para gerenciamento de dados.
-    Atributos Semânticos e de Acessibilidade: Design acessível para todos os usuários, com foco em inclusão.
+- Lista de Filmes: Encontre o filme perfeito para você com nossa lista completa e organizada.
+- Detalhes do Filme: Clique em um filme para abrir um modal informativo com todos os detalhes, incluindo título, ano, diretor, elenco, sinopse e muito mais.
+- Padrão Mapper: Implementação eficiente do padrão Mapper para gerenciamento de dados.
+- Atributos Semânticos e de Acessibilidade: Design acessível para todos os usuários, com foco em inclusão.
 
 ## Tecnologias:
 
