@@ -17,7 +17,7 @@ Esse projeto teve como objetivo a prática e aprendizados e aprofundamento em Ne
 - Padrão Mapper: Implementação eficiente do padrão Mapper para gerenciamento de dados.
 - Atributos Semânticos e de Acessibilidade: Design acessível para todos os usuários, com foco em inclusão.
 
-## Rodar Projeto 🚀
+## Rodando o Projeto 🚀
 
 - Criar arquivo .env baseado no arquivo env.example
 ps: você pode buscar a chave de API acessando esse [link](https://www.omdbapi.com/)
