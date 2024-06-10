@@ -9,11 +9,20 @@ import { MovieContainer } from "./components/Movies/Container";
 import { ListMovie } from "./components/Movies/ListContainer";
 import { ListItem } from "./components/Movies/ListItem";
 import { useMoviesQuery } from "./hooks/query/movies/useMoviesQuery";
+import { Movie } from "./types/Movie";
 
 function App() {
   const [pageParam, setPageParam] = useState(1);
   const [openModal, setOpenModal] = useState(false);
+  const [selectedMovie, setSelectedMovie] = useState<Movie>();
   const { data: movies } = useMoviesQuery({ pageParam });
+
+  const handlerOpenModal = (movie: Movie) => {
+    setSelectedMovie(movie);
+    setOpenModal(true);
+  };
+
+  console.log(selectedMovie);
 
   return (
     <div className="bg-gradient-to-br from-purple-500 to-pink-500 h-svh">
@@ -25,7 +34,7 @@ function App() {
                 key={movie.imdbID}
                 className="flex items-center flex-col gap-2 p-4 bg-slate-50 shadow-lg rounded-md hover:scale-105 transition-all hover:bg-slate-200"
                 role="button"
-                onClick={() => setOpenModal(true)}
+                onClick={() => handlerOpenModal(movie as unknown as Movie)}
                 aria-label="Botão para abrir modal com mais detalhes sobre o filme selecionado"
                 tabIndex={0}
               >
@@ -63,15 +72,10 @@ function App() {
         className="animate-fade"
       >
         <ModalBody>
-          <ModalImage src="https://m.media-amazon.com/images/M/MV5BZjkzNGQzODMtMDM4MS00YTU2LWI2M2UtN2I2NTA2MDUzZmRmXkEyXkFqcGdeQXVyMTE5MzU1Njkw._V1_SX300.jpg" />
+          <ModalImage src={selectedMovie?.poster} />
           <div className="flex flex-col">
-            <ModalTitle>Object of Obsession</ModalTitle>
-            <ModalDescription>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              cumque consequuntur quam eos animi. Molestias, est minus.
-              Doloremque atque eius voluptatem reiciendis commodi quae culpa
-              est, porro pariatur? Quod, praesentium.
-            </ModalDescription>
+            <ModalTitle>{selectedMovie?.title}</ModalTitle>
+            <ModalDescription>{selectedMovie?.type}</ModalDescription>
           </div>
         </ModalBody>
       </ContainerModal>
