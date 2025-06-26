@@ -1,4 +1,4 @@
-# Query the Stranger: Mergulhe no Universo dos Filmes! 🧟‍♂️🧟‍♀️
+# Query the Stranger: Mergulhe no Universo dos Filmes! 🧟‍♂️🧟‍♀️.
 
 Explore e descubra filmes incríveis com a Query the Stranger!
 
